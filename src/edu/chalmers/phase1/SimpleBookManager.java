@@ -6,6 +6,19 @@ import java.util.List;
 public class SimpleBookManager implements BookManager {
 
 	private ArrayList<Book> library = new ArrayList<Book>();
+
+	public SimpleBookManager(){
+		Book b1 = new Book("Andrew Hunt", "The Pragmatic Programmer", 200, "AHTPP", "ComputerS");
+		Book b2 = new Book("Marc J. Rochkind", "Advanced UNIX Programming", 300, "MJRAUP", "ComputerS");
+		Book b3 = new Book("Alain de Botton", "The Architecture of Happiness", 200, "AHTPP", "Archi");
+		Book b4 = new Book("Richard Dawkins", "The Selfish Gene", 320, "RDTSG", "Biology");
+		Book b5 = new Book("Douglas R. Hofstadter","Gödel, Escher, Bach: An Eternal Golden Braid", 180, "RDTSG", "Maths");
+		library.add(b1);
+		library.add(b2);
+		library.add(b3);
+		library.add(b4);
+		library.add(b5);
+	}
 	
 	@Override
 	public int count() {
@@ -22,8 +35,9 @@ public class SimpleBookManager implements BookManager {
 
 	@Override
 	public Book createBook() {
-		
-		return null;
+		Book b = new Book("", "", 0, "", "");
+		library.add(b);
+		return b;
 	}
 
 	@Override
@@ -68,15 +82,16 @@ public class SimpleBookManager implements BookManager {
 
 	@Override
 	public float getMeanPrice() {
-		int tot = 0;
-
-		return 0;
+		return getTotalCost()/library.size();
 	}
 
 	@Override
 	public int getTotalCost() {
-		// TODO Auto-generated method stub
-		return 0;
+		int tot = 0;
+		for( int i = 0; i < library.size(); i++){
+			tot += library.get(i).getPrice();
+		}
+		return tot;
 	}
 
 	@Override
