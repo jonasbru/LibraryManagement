@@ -27,7 +27,7 @@ public class SimpleBookManager implements BookManager {
 
 	@Override
 	public Book getBook(int index) {
-		if( index > 0 && index < library.size())
+		if( index >= 0 && index < library.size())
 			return library.get(index);
 		else
 			return null;
