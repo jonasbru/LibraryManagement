@@ -20,24 +20,24 @@
         <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
         <!-- </intent-filter> -->
         <!-- </activity> -->
-        <activity
-            android:name="DetailActivity"
-            android:label="@string/title_activity_detail" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 <!--         <activity -->
-<!--             android:name=".SummaryActivity" -->
-<!--             android:label="@string/title_activity_summary" > -->
+<!--             android:name="DetailActivity" -->
+<!--             android:label="@string/title_activity_detail" > -->
 <!--             <intent-filter> -->
 <!--                 <action android:name="android.intent.action.MAIN" /> -->
 
 <!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
 <!--             </intent-filter> -->
 <!--         </activity> -->
+        <activity
+            android:name=".SummaryActivity"
+            android:label="@string/title_activity_summary" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
