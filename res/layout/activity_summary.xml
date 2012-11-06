@@ -15,6 +15,7 @@
             android:id="@+id/numberBooksText"
             android:layout_width="wrap_content"
             android:layout_height="96dp"
+            android:gravity="center_vertical"
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -34,7 +35,7 @@
                     android:layout_gravity="right"
                     android:text="@string/TotalCostLabel"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@string/ColorLabel" />
+                    android:textColor="@color/ColorLabel" />
 
                 <TextView
                     android:id="@+id/TotalCostText"
@@ -56,7 +57,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:text="@string/MostExpensiveItemLabel"
+                    android:textColor="@color/ColorLabel"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
+                
 
                 <TextView
                     android:id="@+id/MostExpensiveText"
@@ -78,6 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:text="@string/LeastExpensiveItemLabel"
+                    android:textColor="@color/ColorLabel"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
@@ -100,6 +104,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:text="@string/AverageItemLabel"
+                    android:textColor="@color/ColorLabel"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
