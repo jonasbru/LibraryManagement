@@ -10,7 +10,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" >
+        android:layout_marginTop="0dp"
+        android:paddingTop="50dp" >
 
         <TableRow
             android:id="@+id/TableRow01"
@@ -22,8 +23,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="right"
                 android:text="@string/TitleLabel"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/ColorLabel" />
 
             <TextView
                 android:id="@+id/TitleText"
@@ -44,13 +47,17 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
                 android:text="@string/AuthorLabel"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/ColorLabel" />
 
             <TextView
                 android:id="@+id/AuthorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -65,14 +72,17 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
                 android:text="@string/CourseLabel"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/ColorLabel" />
 
             <TextView
                 android:id="@+id/CourseText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Medium Text"
+                android:layout_weight="1"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
         </TableRow>
@@ -86,14 +96,17 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/PriceLabel"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/ColorLabel" />
 
             <TextView
                 android:id="@+id/PriceText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Medium Text"
+                android:layout_weight="1"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
         </TableRow>
@@ -107,14 +120,17 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ISBN"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/ISBNLabel"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/ColorLabel" />
 
             <TextView
                 android:id="@+id/ISBNText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Medium Text"
+                android:layout_weight="1"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
         </TableRow>

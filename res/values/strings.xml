@@ -5,12 +5,14 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_summary">SummaryActivity</string>
-    <string name="TitleLabel">Title</string>
-    <string name="AuthorLabel">Author</string>
-    <string name="CourseLabel">Course</string>
-    <string name="TotalCostLabel">Total cost:</string>
-    <string name="MostExpensiveItemLabel">Most expensive item:</string>
-    <string name="LeastExpensiveItemLabel">Least expensive item:</string>
-    <string name="AverageItemLabel">Average item:</string>
+    <string name="TitleLabel">Title : </string>
+    <string name="AuthorLabel">Author : </string>
+    <string name="CourseLabel">Course : </string>
+    <string name="TotalCostLabel">Total cost : </string>
+    <string name="MostExpensiveItemLabel">Most expensive item : </string>
+    <string name="LeastExpensiveItemLabel">Least expensive item : </string>
+    <string name="AverageItemLabel">Average item : </string>
+    <string name="PriceLabel">Price : </string>
+    <string name="ISBNLabel">ISBN : </string>
 
 </resources>

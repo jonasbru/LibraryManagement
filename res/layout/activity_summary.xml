@@ -37,6 +37,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/ColorLabel" />
 
+
                 <TextView
                     android:id="@+id/TotalCostText"
                     android:layout_width="wrap_content"
