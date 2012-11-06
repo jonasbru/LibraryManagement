@@ -15,14 +15,14 @@
         <TableRow
             android:id="@+id/TableRow01"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="926dp" >
 
             <TextView
                 android:id="@+id/TextView01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Title"
+                android:text="@string/TitleLabel"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Medium Text"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
         </TableRow>
@@ -44,14 +44,14 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Author"
+                android:text="@string/AuthorLabel"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
                 android:id="@+id/AuthorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Medium Text"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
         </TableRow>
@@ -65,7 +65,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course"
+                android:text="@string/CourseLabel"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
