@@ -14,7 +14,7 @@
         <TextView
             android:id="@+id/numberBooksText"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="96dp"
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -31,8 +31,10 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total cost"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:layout_gravity="right"
+                    android:text="@string/TotalCostLabel"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@string/ColorLabel" />
 
                 <TextView
                     android:id="@+id/TotalCostText"
@@ -52,7 +54,8 @@
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Most expensive item"
+                    android:layout_gravity="right"
+                    android:text="@string/MostExpensiveItemLabel"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
@@ -73,7 +76,8 @@
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Least expensive item"
+                    android:layout_gravity="right"
+                    android:text="@string/LeastExpensiveItemLabel"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
@@ -94,7 +98,8 @@
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Average item"
+                    android:layout_gravity="right"
+                    android:text="@string/AverageItemLabel"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView

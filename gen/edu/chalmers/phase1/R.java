@@ -50,8 +50,13 @@ public final class R {
     }
     public static final class string {
         public static final int AuthorLabel=0x7f040006;
+        public static final int AverageItemLabel=0x7f04000b;
+        public static final int ColorLabel=0x7f04000c;
         public static final int CourseLabel=0x7f040007;
+        public static final int LeastExpensiveItemLabel=0x7f04000a;
+        public static final int MostExpensiveItemLabel=0x7f040009;
         public static final int TitleLabel=0x7f040005;
+        public static final int TotalCostLabel=0x7f040008;
         public static final int app_name=0x7f040000;
         public static final int hello_world=0x7f040001;
         public static final int menu_settings=0x7f040002;
