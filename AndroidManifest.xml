@@ -4,7 +4,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="15" />
 
     <application
@@ -20,18 +20,28 @@
         <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
         <!-- </intent-filter> -->
         <!-- </activity> -->
-<!--         <activity -->
-<!--             android:name="DetailActivity" -->
-<!--             android:label="@string/title_activity_detail" > -->
-<!--             <intent-filter> -->
-<!--                 <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <activity -->
+        <!-- android:name="DetailActivity" -->
+        <!-- android:label="@string/title_activity_detail" > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
-<!--             </intent-filter> -->
-<!--         </activity> -->
+
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
         <activity
             android:name=".SummaryActivity"
             android:label="@string/title_activity_summary" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LibraryManagement"
+            android:label="@string/title_activity_library_management" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
