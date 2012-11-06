@@ -8,5 +8,9 @@
     <string name="TitleLabel">Title</string>
     <string name="AuthorLabel">Author</string>
     <string name="CourseLabel">Course</string>
+    <string name="TotalCostLabel">Total cost:</string>
+    <string name="MostExpensiveItemLabel">Most expensive item:</string>
+    <string name="LeastExpensiveItemLabel">Least expensive item:</string>
+    <string name="AverageItemLabel">Average item:</string>
 
 </resources>
