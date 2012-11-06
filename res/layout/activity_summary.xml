@@ -34,7 +34,7 @@
                     android:layout_gravity="right"
                     android:text="@string/TotalCostLabel"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@string/ColorLabel" />
+                    android:textColor="#999999" />
 
                 <TextView
                     android:id="@+id/TotalCostText"

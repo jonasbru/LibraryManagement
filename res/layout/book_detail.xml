@@ -26,7 +26,7 @@
                 android:gravity="right"
                 android:text="@string/TitleLabel"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#999999" />
+                android:textColor="@string/ColorLabel" />
 
             <TextView
                 android:id="@+id/TitleText"
@@ -51,7 +51,7 @@
                 android:gravity="right"
                 android:text="@string/AuthorLabel"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#999999" />
+                android:textColor="@string/ColorLabel" />
 
             <TextView
                 android:id="@+id/AuthorText"
@@ -76,7 +76,7 @@
                 android:gravity="right"
                 android:text="@string/CourseLabel"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#999999" />
+                android:textColor="@string/ColorLabel" />
 
             <TextView
                 android:id="@+id/CourseText"
@@ -98,9 +98,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="Price"
+                android:text="@string/PriceLabel"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#999999" />
+                android:textColor="@string/ColorLabel" />
 
             <TextView
                 android:id="@+id/PriceText"
@@ -122,9 +122,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="ISBN"
+                android:text="@string/ISBNLabel"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#999999" />
+                android:textColor="@string/ColorLabel" />
 
             <TextView
                 android:id="@+id/ISBNText"
