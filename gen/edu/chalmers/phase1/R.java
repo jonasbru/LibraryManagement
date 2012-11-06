@@ -12,7 +12,6 @@ public final class R {
     }
     public static final class color {
         public static final int ColorLabel=0x7f060000;
-        public static final int ColorValues=0x7f060001;
     }
     public static final class drawable {
         public static final int ic_action_search=0x7f020000;
