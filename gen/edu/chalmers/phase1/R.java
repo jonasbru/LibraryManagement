@@ -48,9 +48,8 @@ public final class R {
         public static final int book_detail=0x7f030001;
     }
     public static final class menu {
-        public static final int activity_library_management=0x7f070000;
-        public static final int activity_summary=0x7f070001;
-        public static final int book_detail=0x7f070002;
+        public static final int activity_summary=0x7f070000;
+        public static final int book_detail=0x7f070001;
     }
     public static final class string {
         public static final int AuthorLabel=0x7f040006;
