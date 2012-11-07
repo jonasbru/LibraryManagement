@@ -38,6 +38,21 @@ public class Book_edit extends Activity {
     	switch (item.getItemId()) {
         case R.id.validate_button:
         	if(((EditText)findViewById(R.id.book_edit_title)).getText().length() != 0){
+        		String author = ((EditText)findViewById(R.id.book_edit_author)).getText().toString();
+        		String title = ((EditText)findViewById(R.id.book_edit_title)).getText().toString();
+        		String isbn = ((EditText)findViewById(R.id.book_edit_isbn)).getText().toString();
+        		String course = ((EditText)findViewById(R.id.book_edit_course)).getText().toString();
+        		Integer price;
+        		//Get the price
+        		if(((EditText)findViewById(R.id.book_edit_price)).getText().length() == 0){
+        			price = 0;
+        		}else{
+        			price = Integer.parseInt(((EditText)findViewById(R.id.book_edit_price)).getText().toString());
+        		}
+        				
+        		//Save the book
+        		Book newBook = new Book(author,title,price, isbn, course);
+        		SimpleBookManager.getBookManager().addBook(newBook);
         		//Bundle bundle = new Bundle();
         		Intent intent = new Intent();
         		//bundle.putString("update", "OK");

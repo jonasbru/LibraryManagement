@@ -25,7 +25,7 @@ import android.widget.TextView;
  */
 public class Collection extends SherlockFragment {
 
-	private BookManager m = new SimpleBookManager();
+	private BookManager m = SimpleBookManager.getBookManager();
 	private ArrayAdapter<String> listAdapter;
 	ListView collectionLayout;
 	

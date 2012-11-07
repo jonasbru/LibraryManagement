@@ -8,7 +8,7 @@ public class SimpleBookManager implements BookManager {
 	private ArrayList<Book> library = new ArrayList<Book>();
 	private static SimpleBookManager simpleBookManager = null;
 
-	public SimpleBookManager(){
+	private SimpleBookManager(){
 		Book b1 = new Book("Andrew Hunt", "The Pragmatic Programmer", 200, "AHTPP", "ComputerS");
 		Book b2 = new Book("Marc J. Rochkind", "Advanced UNIX Programming", 300, "MJRAUP", "ComputerS");
 		Book b3 = new Book("Alain de Botton", "The Architecture of Happiness", 200, "AHTPP", "Archi");

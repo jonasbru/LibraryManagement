@@ -20,7 +20,7 @@ public class DetailActivity extends Activity {
 
     public void retreiveBookInfo(){
     	int bookId = getIntent().getExtras().getInt("BOOK_ID");
-        BookManager bm = new SimpleBookManager();
+        BookManager bm = SimpleBookManager.getBookManager();
         Book b = bm.getBook(bookId);
         
         TextView title = (TextView) findViewById(R.id.TitleText);

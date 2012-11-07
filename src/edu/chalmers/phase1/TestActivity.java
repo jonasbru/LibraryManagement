@@ -9,7 +9,7 @@ public class TestActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		BookManager m = new SimpleBookManager();
+		BookManager m = SimpleBookManager.getBookManager();
 		Log.d("TestActivity", m.getAllBooks().toString());
 	}
 }

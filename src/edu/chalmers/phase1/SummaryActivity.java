@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class SummaryActivity extends SherlockFragment {
-	BookManager bm = new SimpleBookManager();
+	BookManager bm = SimpleBookManager.getBookManager();
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
