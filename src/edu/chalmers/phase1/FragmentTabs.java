@@ -1,6 +1,7 @@
 package edu.chalmers.phase1;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -19,7 +20,7 @@ import com.actionbarsherlock.view.MenuInflater;
 
 public class FragmentTabs extends SherlockFragmentActivity {
     private SherlockFragment sumFragment= new SummaryActivity();
-    private SherlockFragment testFragment= new Collection();
+    private SherlockFragment collectionFragment= new Collection();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class FragmentTabs extends SherlockFragmentActivity {
         testTab.setText("Collection");
         sumTab.setText("Summary");
         sumTab.setTabListener(new MyTabListener(sumFragment));
-        testTab.setTabListener(new MyTabListener(testFragment));
+        testTab.setTabListener(new MyTabListener(collectionFragment));
         
         actionBar.addTab(testTab);
         actionBar.addTab(sumTab);
@@ -65,6 +66,16 @@ public class FragmentTabs extends SherlockFragmentActivity {
         return super.onOptionsItemSelected(item);
     	}
     }
+ 
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		Log.d("TAG","Result");
+		if(resultCode==Activity.RESULT_OK)
+		{
+			((Collection)collectionFragment).update();
+			Log.d("TAG","Notify");
+		}
+	}
     
     public class MyTabListener implements TabListener {
 
