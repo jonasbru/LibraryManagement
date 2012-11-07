@@ -1,8 +1,5 @@
 package edu.chalmers.phase1;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.view.MenuInflater;
 
@@ -20,13 +17,20 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
 /*
  * Display the list of all the titles list
  */
 public class Collection extends SherlockFragment {
 
+	static final int NEW_BOOK = 1;
 	private BookManager m = SimpleBookManager.getBookManager();
 	private ArrayAdapter<String> listAdapter;
+	
+	public ArrayAdapter<String> getListAdapter() {
+		return listAdapter;
+	}
+
 	ListView collectionLayout;
 	
     @Override
@@ -55,8 +59,16 @@ public class Collection extends SherlockFragment {
             
         	Intent myIntent = new Intent(getView().getContext(), DetailActivity.class);
         	myIntent.putExtra("BOOK_ID", (int)position);
-            startActivityForResult(myIntent, 0);
+            startActivity(myIntent);
         }
     };
+    
+    public void update(){
+    	getListAdapter().clear();
+    	for (String title : m.getAllBooksTitles()) {
+    		listAdapter.add(title);
+    	}
+		listAdapter.notifyDataSetChanged();
+    }
     
 }
