@@ -31,8 +31,8 @@ public class FragmentTabs extends SherlockFragmentActivity {
          
         ActionBar.Tab sumTab = actionBar.newTab();
         ActionBar.Tab testTab = actionBar.newTab();
-        testTab.setText("Test Tab");
-        sumTab.setText("Sum Tab");
+        testTab.setText("Collection");
+        sumTab.setText("Summary");
         sumTab.setTabListener(new MyTabListener(sumFragment));
         testTab.setTabListener(new MyTabListener(testFragment));
         
