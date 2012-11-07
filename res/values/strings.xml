@@ -21,5 +21,14 @@
     <string name="title_activity_library_management">LibraryManagement</string>
     <string name="title_activity_fragmentTab">Tab</string>
     <string name="title_activity_test">Test</string>
+    <string name="add_button">Add</string>
+    <string name="add_icon">plus.png</string>
+    <string name="validate_icon">validate.jpg</string>
+    <string name="title_activity_book_edit">Book_edit</string>
+    <string name="book_edit_title">Title</string>
+    <string name="book_edit_author">Author</string>
+    <string name="book_edit_course">Course</string>
+    <string name="book_edit_isbn">ISBN</string>
+    <string name="book_edit_price">Price</string>
 
 </resources>

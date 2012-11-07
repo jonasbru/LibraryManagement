@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.actionbarsherlock.app.SherlockFragment;
+import com.actionbarsherlock.view.MenuInflater;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -57,4 +58,5 @@ public class Collection extends SherlockFragment {
             startActivityForResult(myIntent, 0);
         }
     };
+    
 }

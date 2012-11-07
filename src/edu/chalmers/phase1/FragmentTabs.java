@@ -1,6 +1,7 @@
 package edu.chalmers.phase1;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -11,7 +12,10 @@ import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.ActionBar.TabListener;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 //import com.actionbarsherlock.sample.demos.R;
+import com.actionbarsherlock.view.MenuInflater;
 
 public class FragmentTabs extends SherlockFragmentActivity {
     private SherlockFragment sumFragment= new SummaryActivity();
@@ -38,6 +42,26 @@ public class FragmentTabs extends SherlockFragmentActivity {
         
         actionBar.addTab(testTab);
         actionBar.addTab(sumTab);
+    }
+    
+    
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getSupportMenuInflater();
+        inflater.inflate(R.menu.simple_addbutton, menu);
+        return true;
+    }
+    
+    public boolean onOptionsItemSelected(MenuItem item) {
+        
+        //respond to menu item selection
+    	switch (item.getItemId()) {
+        case R.id.add:
+        	Intent myIntent = new Intent( this, Book_edit.class);
+        	startActivityForResult(myIntent, 0);
+        return true;
+        default:
+        return super.onOptionsItemSelected(item);
+    	}
     }
     
     public class MyTabListener implements TabListener {

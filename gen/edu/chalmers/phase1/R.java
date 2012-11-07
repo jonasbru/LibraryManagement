@@ -920,19 +920,21 @@ containing a value of this type.
         public static final int abs__textfield_searchview_right_holo_light=0x7f02006e;
         public static final int ic_action_search=0x7f02006f;
         public static final int ic_launcher=0x7f020070;
+        public static final int plus=0x7f020071;
+        public static final int validate=0x7f020072;
     }
     public static final class id {
-        public static final int AuthorText=0x7f040047;
-        public static final int AverageItemText=0x7f040042;
-        public static final int CourseText=0x7f040048;
-        public static final int ISBNText=0x7f04004b;
-        public static final int LeastExpensiveText=0x7f04003f;
-        public static final int MostExpensiveText=0x7f04003c;
-        public static final int PriceText=0x7f04004a;
-        public static final int TableRow01=0x7f040043;
-        public static final int TextView01=0x7f040044;
-        public static final int TitleText=0x7f040045;
-        public static final int TotalCostText=0x7f040039;
+        public static final int AuthorText=0x7f040052;
+        public static final int AverageItemText=0x7f04004d;
+        public static final int CourseText=0x7f040053;
+        public static final int ISBNText=0x7f040056;
+        public static final int LeastExpensiveText=0x7f04004a;
+        public static final int MostExpensiveText=0x7f040047;
+        public static final int PriceText=0x7f040055;
+        public static final int TableRow01=0x7f04004e;
+        public static final int TextView01=0x7f04004f;
+        public static final int TitleText=0x7f040050;
+        public static final int TotalCostText=0x7f040044;
         public static final int abs__action_bar=0x7f040022;
         public static final int abs__action_bar_container=0x7f040021;
         public static final int abs__action_bar_subtitle=0x7f040011;
@@ -973,32 +975,45 @@ containing a value of this type.
         public static final int abs__title=0x7f04001b;
         public static final int abs__titleDivider=0x7f04001c;
         public static final int abs__up=0x7f04000b;
-        public static final int collectionListView=0x7f040033;
+        public static final int add=0x7f04005a;
+        public static final int book_edit_author=0x7f040037;
+        public static final int book_edit_author_label=0x7f040036;
+        public static final int book_edit_course=0x7f040039;
+        public static final int book_edit_course_label=0x7f040038;
+        public static final int book_edit_isbn=0x7f04003b;
+        public static final int book_edit_isbn_label=0x7f04003a;
+        public static final int book_edit_price=0x7f04003d;
+        public static final int book_edit_price_label=0x7f04003c;
+        public static final int book_edit_title=0x7f040035;
+        public static final int book_edit_title_label=0x7f040034;
+        public static final int collectionListView=0x7f04003e;
         public static final int disableHome=0x7f040009;
         public static final int edit_query=0x7f040027;
         public static final int homeAsUp=0x7f040006;
-        public static final int linearLayout1=0x7f040035;
+        public static final int linearLayout1=0x7f040040;
         public static final int listMode=0x7f040002;
-        public static final int menu_settings=0x7f04004d;
+        public static final int menu_settings=0x7f040059;
         public static final int normal=0x7f040001;
-        public static final int numberBooksText=0x7f040036;
-        public static final int rowTextView=0x7f04004c;
+        public static final int numberBooksText=0x7f040041;
+        public static final int rowTextView=0x7f040057;
+        public static final int scrollView1=0x7f040033;
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
-        public static final int tabContent=0x7f040034;
+        public static final int tabContent=0x7f04003f;
         public static final int tabMode=0x7f040003;
-        public static final int tableRow1=0x7f040037;
-        public static final int tableRow2=0x7f04003a;
-        public static final int tableRow3=0x7f04003d;
-        public static final int tableRow4=0x7f040040;
-        public static final int textView1=0x7f040046;
-        public static final int textView2=0x7f040038;
-        public static final int textView3=0x7f040049;
-        public static final int textView4=0x7f04003b;
-        public static final int textView6=0x7f04003e;
-        public static final int textView8=0x7f040041;
+        public static final int tableRow1=0x7f040042;
+        public static final int tableRow2=0x7f040045;
+        public static final int tableRow3=0x7f040048;
+        public static final int tableRow4=0x7f04004b;
+        public static final int textView1=0x7f040051;
+        public static final int textView2=0x7f040043;
+        public static final int textView3=0x7f040054;
+        public static final int textView4=0x7f040046;
+        public static final int textView6=0x7f040049;
+        public static final int textView8=0x7f04004c;
         public static final int useLogo=0x7f040004;
+        public static final int validate_button=0x7f040058;
         public static final int wrap_content=0x7f040000;
     }
     public static final class integer {
@@ -1028,18 +1043,21 @@ containing a value of this type.
         public static final int abs__search_dropdown_item_icons_2line=0x7f030014;
         public static final int abs__search_view=0x7f030015;
         public static final int abs__simple_dropdown_hint=0x7f030016;
-        public static final int activity_collection=0x7f030017;
-        public static final int activity_fragmenttab=0x7f030018;
-        public static final int activity_summary=0x7f030019;
-        public static final int book_detail=0x7f03001a;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001b;
-        public static final int sherlock_spinner_item=0x7f03001c;
-        public static final int simple_row=0x7f03001d;
+        public static final int activity_book_edit=0x7f030017;
+        public static final int activity_collection=0x7f030018;
+        public static final int activity_fragmenttab=0x7f030019;
+        public static final int activity_summary=0x7f03001a;
+        public static final int book_detail=0x7f03001b;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001c;
+        public static final int sherlock_spinner_item=0x7f03001d;
+        public static final int simple_row=0x7f03001e;
     }
     public static final class menu {
-        public static final int activity_summary=0x7f0b0000;
-        public static final int activity_test=0x7f0b0001;
-        public static final int book_detail=0x7f0b0002;
+        public static final int activity_book_edit=0x7f0b0000;
+        public static final int activity_summary=0x7f0b0001;
+        public static final int activity_test=0x7f0b0002;
+        public static final int book_detail=0x7f0b0003;
+        public static final int simple_addbutton=0x7f0b0004;
     }
     public static final class string {
         public static final int AuthorLabel=0x7f090016;
@@ -1096,9 +1114,17 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abs__shareactionprovider_share_with_application=0x7f090009;
+        public static final int add_button=0x7f090024;
+        public static final int add_icon=0x7f090025;
         public static final int app_name=0x7f09000f;
+        public static final int book_edit_author=0x7f090029;
+        public static final int book_edit_course=0x7f09002a;
+        public static final int book_edit_isbn=0x7f09002b;
+        public static final int book_edit_price=0x7f09002c;
+        public static final int book_edit_title=0x7f090028;
         public static final int hello_world=0x7f090010;
         public static final int menu_settings=0x7f090011;
+        public static final int title_activity_book_edit=0x7f090027;
         public static final int title_activity_detail=0x7f090012;
         public static final int title_activity_fragmentTab=0x7f090022;
         public static final int title_activity_fragmentTabs=0x7f090014;
@@ -1108,6 +1134,7 @@ containing a value of this type.
         public static final int title_section1=0x7f090020;
         public static final int title_section2=0x7f09001f;
         public static final int title_section3=0x7f09001e;
+        public static final int validate_icon=0x7f090026;
     }
     public static final class style {
         public static final int AppTheme=0x7f0a0059;

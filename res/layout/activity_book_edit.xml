@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="0dp">
+        
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+        	<TextView
+	           android:id="@+id/book_edit_title_label"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:text="@string/book_edit_title"
+	           android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	       <EditText
+	           android:id="@+id/book_edit_title"
+	           android:layout_width="match_parent"
+	           android:layout_height="wrap_content"
+	           android:hint="Title"
+	           android:ems="10" >
+	           <requestFocus />
+	       </EditText>
+	       
+	        <TextView
+                    android:id="@+id/book_edit_author_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/book_edit_author"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		<EditText
+		    android:id="@+id/book_edit_author"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:hint="Author"
+		    android:ems="10" >
+		
+		    <requestFocus />
+		</EditText>
+		
+		 <TextView
+		    android:id="@+id/book_edit_course_label"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/book_edit_course"
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		
+		<EditText
+		    android:id="@+id/book_edit_course"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:hint="Course"
+		    android:ems="10" >
+		
+		    <requestFocus />
+		</EditText>
+		
+		<TextView
+		    android:id="@+id/book_edit_isbn_label"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/book_edit_isbn"
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		
+		<EditText
+		    android:id="@+id/book_edit_isbn"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:hint="ISBN"
+		    android:ems="10" >
+		
+		    <requestFocus />
+		</EditText>
+		<TextView
+		    android:id="@+id/book_edit_price_label"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/book_edit_price"
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		
+		<EditText
+		    android:id="@+id/book_edit_price"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:hint="Price"
+		    android:ems="10" >
+		
+		    <requestFocus />
+		</EditText>
+
+    </TableLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,6 +1,8 @@
 package edu.chalmers.phase1;
 
 import com.actionbarsherlock.app.SherlockFragment;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -41,5 +43,6 @@ public class SummaryActivity extends SherlockFragment {
     	updateSummary(v);
         return v;
     }
+    
 
 }

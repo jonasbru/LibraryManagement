@@ -1,5 +1,6 @@
 package edu.chalmers.phase1;
 
+
 import android.R.integer;
 import android.os.Bundle;
 import android.app.Activity;
@@ -12,7 +13,13 @@ public class DetailActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_detail);
-        int bookId = getIntent().getExtras().getInt("BOOK_ID");
+
+		retreiveBookInfo();        
+        
+    }
+
+    public void retreiveBookInfo(){
+    	int bookId = getIntent().getExtras().getInt("BOOK_ID");
         BookManager bm = new SimpleBookManager();
         Book b = bm.getBook(bookId);
         
@@ -30,14 +37,15 @@ public class DetailActivity extends Activity {
         
         TextView isbn = (TextView) findViewById(R.id.ISBNText);
         isbn.setText(b.getIsbn());
-        
     }
-
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.book_detail, menu);
+        //getMenuInflater().inflate(R.menu.book_detail, menu);
+            android.view.MenuInflater inflater =getMenuInflater();
+            inflater.inflate(R.menu.simple_addbutton, menu);
         return true;
     }
+    */
     
     /* A metttre dans le handler pour retourner a l'activite precedente (collection)
      * Button next = (Button) findViewById(R.id.Button02);
