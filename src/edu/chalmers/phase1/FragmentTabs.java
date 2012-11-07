@@ -14,9 +14,8 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 //import com.actionbarsherlock.sample.demos.R;
 
 public class FragmentTabs extends SherlockFragmentActivity {
-    //private TextView mSelected;
     private SherlockFragment sumFragment= new SummaryActivity();
-    private SherlockFragment testFragment= new Test();
+    private SherlockFragment testFragment= new Collection();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,11 +51,8 @@ public class FragmentTabs extends SherlockFragmentActivity {
 
         @Override
         public void onTabSelected(Tab tab, FragmentTransaction transaction) {
-            //mSelected.setText("Selected: " + tab.getText());
         	Log.d("TAG", "" + fragment);
         	transaction.replace(R.id.tabContent, fragment);
-        	//transaction.add(R.id.tabContent, fragment);
-        	//transaction.attach(fragment);
         	
         	Log.d("TAG", "Terminate " + fragment);
         }

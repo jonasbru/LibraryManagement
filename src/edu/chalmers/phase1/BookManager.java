@@ -14,5 +14,6 @@ public interface BookManager {
 	public float getMeanPrice();
 	public int getTotalCost();
 	public void saveChanges();
+	ArrayList<String> getAllBooksTitles();
 	
 }

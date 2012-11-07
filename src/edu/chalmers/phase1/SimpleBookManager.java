@@ -93,6 +93,15 @@ public class SimpleBookManager implements BookManager {
 		}
 		return tot;
 	}
+	
+	@Override
+	public ArrayList<String> getAllBooksTitles() {
+		ArrayList<String> list = new ArrayList<String>();
+		for( int i = 0; i < library.size(); i++){
+			list.add(library.get(i).getTitle());
+		}
+		return list;
+	}
 
 	@Override
 	public void saveChanges() {
