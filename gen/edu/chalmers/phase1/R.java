@@ -1120,6 +1120,7 @@ containing a value of this type.
         public static final int book_edit_author=0x7f090029;
         public static final int book_edit_course=0x7f09002a;
         public static final int book_edit_isbn=0x7f09002b;
+        public static final int book_edit_popup=0x7f09002d;
         public static final int book_edit_price=0x7f09002c;
         public static final int book_edit_title=0x7f090028;
         public static final int hello_world=0x7f090010;

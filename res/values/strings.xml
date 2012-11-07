@@ -30,5 +30,6 @@
     <string name="book_edit_course">Course</string>
     <string name="book_edit_isbn">ISBN</string>
     <string name="book_edit_price">Price</string>
+    <string name="book_edit_popup">You have to enter a title</string>
 
 </resources>
