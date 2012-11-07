@@ -6,6 +6,7 @@ import java.util.List;
 public class SimpleBookManager implements BookManager {
 
 	private ArrayList<Book> library = new ArrayList<Book>();
+	private static SimpleBookManager simpleBookManager = null;
 
 	public SimpleBookManager(){
 		Book b1 = new Book("Andrew Hunt", "The Pragmatic Programmer", 200, "AHTPP", "ComputerS");
@@ -108,5 +109,16 @@ public class SimpleBookManager implements BookManager {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	static public BookManager getBookManager(){
+		if (simpleBookManager == null) {
+			simpleBookManager = new SimpleBookManager();
+		}
+		return simpleBookManager;
+	}
 
+	@Override
+	public void addBook(Book b) {
+		library.add(b);
+	}
 }
