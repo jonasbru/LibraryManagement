@@ -42,6 +42,8 @@ public class FragmentTabs extends SherlockFragmentActivity {
         
         actionBar.addTab(testTab);
         actionBar.addTab(sumTab);
+        
+        SimpleBookManager.getBookManager().loadBooks(getPreferences(0));
     }
     
     

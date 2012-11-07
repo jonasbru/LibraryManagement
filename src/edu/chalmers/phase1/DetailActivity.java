@@ -1,10 +1,8 @@
 package edu.chalmers.phase1;
 
 
-import android.R.integer;
-import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
+import android.os.Bundle;
 import android.widget.TextView;
 
 public class DetailActivity extends Activity {

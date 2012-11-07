@@ -1,14 +1,12 @@
 package edu.chalmers.phase1;
 
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.actionbarsherlock.app.SherlockFragment;
 
 public class SummaryActivity extends SherlockFragment {
 	BookManager bm = SimpleBookManager.getBookManager();

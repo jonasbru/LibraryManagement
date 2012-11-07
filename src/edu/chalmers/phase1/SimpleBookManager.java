@@ -1,24 +1,76 @@
 package edu.chalmers.phase1;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.io.StringBufferInputStream;
 import java.util.ArrayList;
-import java.util.List;
+
+import org.json.JSONObject;
+
+import android.content.SharedPreferences;
+import android.util.JsonWriter;
+import android.util.Log;
 
 public class SimpleBookManager implements BookManager {
 
+	//Singleton
+	private static SimpleBookManager simpleBookManager = null;	
+	static public SimpleBookManager getBookManager(){
+		if (simpleBookManager == null) {
+			simpleBookManager = new SimpleBookManager();
+		}
+		return simpleBookManager;
+	}
+
+	
 	private ArrayList<Book> library = new ArrayList<Book>();
-	private static SimpleBookManager simpleBookManager = null;
+	private SharedPreferences sp;
 
 	private SimpleBookManager(){
-		Book b1 = new Book("Andrew Hunt", "The Pragmatic Programmer", 200, "AHTPP", "ComputerS");
-		Book b2 = new Book("Marc J. Rochkind", "Advanced UNIX Programming", 300, "MJRAUP", "ComputerS");
-		Book b3 = new Book("Alain de Botton", "The Architecture of Happiness", 200, "AHTPP", "Archi");
-		Book b4 = new Book("Richard Dawkins", "The Selfish Gene", 320, "RDTSG", "Biology");
-		Book b5 = new Book("Douglas R. Hofstadter","Gödel, Escher, Bach: An Eternal Golden Braid", 180, "RDTSG", "Maths");
-		library.add(b1);
-		library.add(b2);
-		library.add(b3);
-		library.add(b4);
-		library.add(b5);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public boolean loadBooks(SharedPreferences sp){
+		this.sp = sp;
+		
+		if(!sp.contains("books")) {		
+			library.add(new Book("Andrew Hunt", "The Pragmatic Programmer", 200, "AHTPP", "ComputerS"));
+			library.add(new Book("Marc J. Rochkind", "Advanced UNIX Programming", 300, "MJRAUP", "ComputerS"));
+			library.add(new Book("Alain de Botton", "The Architecture of Happiness", 200, "AHTPP", "Archi"));
+			library.add(new Book("Richard Dawkins", "The Selfish Gene", 320, "RDTSG", "Biology"));
+			library.add(new Book("Douglas R. Hofstadter","Gödel, Escher, Bach: An Eternal Golden Braid", 180, "RDTSG", "Maths"));			
+		} else {
+				try {
+					library = (ArrayList<Book>) fromString(sp.getString("books", ""));
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+		}
+		
+		return true;
+	}
+
+	@Override
+	public void saveChanges() {
+		SharedPreferences.Editor editor = this.sp.edit();
+		
+		try {
+			editor.putString("books", toString(this.library));
+		} catch (IOException e) {
+			
+		}
+
+		editor.commit();
+		
 	}
 	
 	@Override
@@ -83,7 +135,7 @@ public class SimpleBookManager implements BookManager {
 
 	@Override
 	public float getMeanPrice() {
-		return getTotalCost()/library.size();
+		return library.size() > 0 ? getTotalCost()/library.size() : 0;
 	}
 
 	@Override
@@ -105,20 +157,43 @@ public class SimpleBookManager implements BookManager {
 	}
 
 	@Override
-	public void saveChanges() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	static public BookManager getBookManager(){
-		if (simpleBookManager == null) {
-			simpleBookManager = new SimpleBookManager();
-		}
-		return simpleBookManager;
-	}
-
-	@Override
 	public void addBook(Book b) {
 		library.add(b);
 	}
+	
+	
+	//Serialization
+    private Object fromString( String s ) throws IOException, ClassNotFoundException {
+        byte [] data = s.getBytes();
+        StringBufferInputStream sbis = new StringBufferInputStream(s);
+        //ByteArrayInputStream bais = new ByteArrayInputStream(data);
+        ObjectInputStream ois = new ObjectInputStream(sbis);
+        Object o  = ois.readObject();
+        ois.close();
+
+        return o;
+    }
+    private String toString(Serializable o) throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+        oos.writeObject(o);
+        oos.flush();
+        String s = baos.toString();
+        oos.close();
+        baos.close();
+        Log.d("CACA", s);
+
+        Object oo;
+        try {
+			oo = fromString(s);
+	        Log.d("CACA1", oo.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        
+
+        Log.d("CACA", "plp");
+        
+        return s;
+    }
 }

@@ -1,11 +1,25 @@
 package edu.chalmers.phase1;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	private String author;
 	private String title;
 	private int price;
 	private String isbn;
 	private String course;
+	
+	public Book(String author, String title, int price, String isbn,
+			String course) {
+		super();
+		this.author = author;
+		this.title = title;
+		this.price = price;
+		this.isbn = isbn;
+		this.course = course;
+	}
 	
 	public String getAuthor() {
 		return author;
@@ -37,15 +51,4 @@ public class Book {
 	public void setCourse(String course) {
 		this.course = course;
 	}
-	public Book(String author, String title, int price, String isbn,
-			String course) {
-		super();
-		this.author = author;
-		this.title = title;
-		this.price = price;
-		this.isbn = isbn;
-		this.course = course;
-	}
-	
-	
 }
