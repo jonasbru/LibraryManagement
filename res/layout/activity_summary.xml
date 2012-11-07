@@ -1,9 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/AppTheme"
     android:layout_width="match_parent"
+    style="@style/SherlockTheme"
     android:layout_height="match_parent" >
-
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"

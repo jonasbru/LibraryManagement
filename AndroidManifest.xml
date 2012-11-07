@@ -10,7 +10,9 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name">
-        <!-- android:theme="@style/AppTheme" > -->
+
+        <!-- android:theme="@style/SherlockTheme" -->
+
 
         <!-- <activity android:name="TestActivity" > -->
         <!-- <intent-filter> -->
@@ -30,19 +32,31 @@
         <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
         <!-- </intent-filter> -->
         <!-- </activity> -->
-<!--         <activity -->
-<!--         android:name=".SummaryActivity" -->
-<!--         android:label="@string/title_activity_summary" > -->
-<!--         <intent-filter> -->
-<!--         <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <activity -->
+        <!-- android:name=".SummaryActivity" -->
+        <!-- android:label="@string/title_activity_summary" > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
 
 
-<!--         <category android:name="android.intent.category.LAUNCHER" /> -->
-<!--         </intent-filter> -->
-<!--         </activity> -->
-		<activity android:label="@string/title_activity_fragmentTab" android:name=".FragmentTabs">
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".FragmentTabs"
+            android:label="@string/title_activity_fragmentTab" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Test"
+            android:label="@string/title_activity_test" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

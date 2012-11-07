@@ -20,5 +20,6 @@
     <string name="title_section1">Section 1</string>
     <string name="title_activity_library_management">LibraryManagement</string>
     <string name="title_activity_fragmentTab">Tab</string>
+    <string name="title_activity_test">Test</string>
 
 </resources>

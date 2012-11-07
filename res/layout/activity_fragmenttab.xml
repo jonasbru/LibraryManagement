@@ -5,13 +5,10 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:padding="20dip">
-    <TextView
+    <LinearLayout
+        android:id="@+id/tabContent"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="plop" />
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+        plop
+    </LinearLayout> 
 </LinearLayout>

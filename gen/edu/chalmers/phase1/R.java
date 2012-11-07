@@ -984,12 +984,12 @@ containing a value of this type.
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
+        public static final int tabContent=0x7f040033;
         public static final int tabMode=0x7f040003;
         public static final int tableRow1=0x7f040036;
         public static final int tableRow2=0x7f040039;
         public static final int tableRow3=0x7f04003c;
         public static final int tableRow4=0x7f04003f;
-        public static final int text=0x7f040033;
         public static final int textView1=0x7f040045;
         public static final int textView2=0x7f040037;
         public static final int textView3=0x7f040048;
@@ -1028,13 +1028,15 @@ containing a value of this type.
         public static final int abs__simple_dropdown_hint=0x7f030016;
         public static final int activity_fragmenttab=0x7f030017;
         public static final int activity_summary=0x7f030018;
-        public static final int book_detail=0x7f030019;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001a;
-        public static final int sherlock_spinner_item=0x7f03001b;
+        public static final int activity_test=0x7f030019;
+        public static final int book_detail=0x7f03001a;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001b;
+        public static final int sherlock_spinner_item=0x7f03001c;
     }
     public static final class menu {
         public static final int activity_summary=0x7f0b0000;
-        public static final int book_detail=0x7f0b0001;
+        public static final int activity_test=0x7f0b0001;
+        public static final int book_detail=0x7f0b0002;
     }
     public static final class string {
         public static final int AuthorLabel=0x7f090016;
@@ -1099,6 +1101,7 @@ containing a value of this type.
         public static final int title_activity_fragmentTabs=0x7f090014;
         public static final int title_activity_library_management=0x7f090021;
         public static final int title_activity_summary=0x7f090013;
+        public static final int title_activity_test=0x7f090023;
         public static final int title_section1=0x7f090020;
         public static final int title_section2=0x7f09001f;
         public static final int title_section3=0x7f09001e;
@@ -1119,6 +1122,7 @@ containing a value of this type.
         public static final int Sherlock___Widget_Holo_ListView=0x7f0a0026;
         public static final int Sherlock___Widget_Holo_Spinner=0x7f0a0023;
         public static final int Sherlock___Widget_SearchAutoCompleteTextView=0x7f0a0033;
+        public static final int SherlockTheme=0x7f0a005a;
         public static final int TextAppearance_Sherlock_DialogWindowTitle=0x7f0a0048;
         public static final int TextAppearance_Sherlock_Light_DialogWindowTitle=0x7f0a0049;
         public static final int TextAppearance_Sherlock_Light_Small=0x7f0a004c;

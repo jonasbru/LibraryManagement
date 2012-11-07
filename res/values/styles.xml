@@ -2,5 +2,6 @@
 
     <style name="AppTheme" parent="android:Theme.Holo" />
     <color name="ColorLabel">#999999</color>
+    <style name="SherlockTheme" parent="Theme.Sherlock"></style>
 
 </resources>
