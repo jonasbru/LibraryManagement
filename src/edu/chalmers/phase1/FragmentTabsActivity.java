@@ -1,13 +1,11 @@
 package edu.chalmers.phase1;
 
 
-import android.R.id;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
-
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
@@ -15,9 +13,9 @@ import com.actionbarsherlock.app.ActionBar.TabListener;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 //import com.actionbarsherlock.sample.demos.R;
-import com.actionbarsherlock.view.MenuInflater;
 
 /*
  * Activity wich manage 2 tabs (fragments): collection and summary
