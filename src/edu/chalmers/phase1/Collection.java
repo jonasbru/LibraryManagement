@@ -66,6 +66,9 @@ public class Collection extends SherlockFragment {
 		{
 			update();
 			Log.d("TAG","back to collection");
+		}else if(resultCode==Activity.RESULT_CANCELED){
+			Log.d("TAG","CANCEL");
+			update();
 		}
 	}
     
