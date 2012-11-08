@@ -51,4 +51,8 @@ public class Book implements Serializable {
 	public void setCourse(String course) {
 		this.course = course;
 	}
+	
+	public String toString() {
+		return "Title:" + title + ",Author:" + author + ",Price:" + price + ",Course:" + course + ",ISBN:" + isbn; 
+	}
 }

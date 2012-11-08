@@ -1,17 +1,24 @@
 package edu.chalmers.phase1;
 
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class DetailActivity extends Activity {
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
+
+
+public class DetailActivity extends SherlockActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	setTheme(R.style.Theme_Sherlock);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_detail);
-
+        
 		retreiveBookInfo();        
         
     }
@@ -35,6 +42,33 @@ public class DetailActivity extends Activity {
         
         TextView isbn = (TextView) findViewById(R.id.ISBNText);
         isbn.setText(b.getIsbn());
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        menu.add("Modify")
+            .setIcon(R.drawable.edit)
+            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+
+        menu.add("Delete")
+            .setIcon(R.drawable.delete)
+            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+
+        return true;
+    }
+    
+    public boolean onOptionsItemSelected(MenuItem item) {
+        
+        //respond to menu item selection
+    	switch (item.getItemId()) {
+        case R.id.add:
+        	Intent myIntent = new Intent( this, Book_edit.class);
+        	startActivityForResult(myIntent, 0);
+        return true;
+        default:
+        return super.onOptionsItemSelected(item);
+    	}
     }
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {

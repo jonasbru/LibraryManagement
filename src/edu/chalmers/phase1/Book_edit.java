@@ -50,20 +50,16 @@ public class Book_edit extends Activity {
         		//Save the book
         		Book newBook = new Book(author,title,price, isbn, course);
         		SimpleBookManager.getBookManager().addBook(newBook);
+
         		SimpleBookManager.getBookManager().saveChanges();
-        		
-        		//Bundle bundle = new Bundle();
+
         		Intent intent = new Intent();
-        		//bundle.putString("update", "OK");
-            	//Intent mIntent = new Intent();
-            	//mIntent.putExtras(bundle);
                 setResult(RESULT_OK, intent);
-                Log.d("TAG","V1");
                 finish();
         	}else{
+        		//Need to fill the title
         		AlertDialog alert = alt_bld.create();
         		alert.show();
-        		Log.d("TAG","V2");
         	}
             
             return true;
