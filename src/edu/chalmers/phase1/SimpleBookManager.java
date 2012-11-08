@@ -4,15 +4,12 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.io.StringBufferInputStream;
 import java.util.ArrayList;
 
-import org.json.JSONObject;
-
 import android.content.SharedPreferences;
-import android.util.JsonWriter;
 import android.util.Log;
 
 public class SimpleBookManager implements BookManager {
@@ -37,24 +34,25 @@ public class SimpleBookManager implements BookManager {
 	public boolean loadBooks(SharedPreferences sp){
 		this.sp = sp;
 		
-		if(!sp.contains("books")) {		
+//		if(!sp.contains("books")) {		
 			library.add(new Book("Andrew Hunt", "The Pragmatic Programmer", 200, "AHTPP", "ComputerS"));
 			library.add(new Book("Marc J. Rochkind", "Advanced UNIX Programming", 300, "MJRAUP", "ComputerS"));
 			library.add(new Book("Alain de Botton", "The Architecture of Happiness", 200, "AHTPP", "Archi"));
 			library.add(new Book("Richard Dawkins", "The Selfish Gene", 320, "RDTSG", "Biology"));
 			library.add(new Book("Douglas R. Hofstadter","Gödel, Escher, Bach: An Eternal Golden Braid", 180, "RDTSG", "Maths"));			
-		} else {
-				try {
-					library = (ArrayList<Book>) fromString(sp.getString("books", ""));
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			
-		}
+//		} else {
+//				try {
+//					Log.d("CACA get", sp.getString("books", ""));
+//					library = (ArrayList<Book>) fromString(sp.getString("books", ""));
+//				} catch (IOException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				} catch (ClassNotFoundException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			
+//		}
 		
 		return true;
 	}
@@ -64,6 +62,7 @@ public class SimpleBookManager implements BookManager {
 		SharedPreferences.Editor editor = this.sp.edit();
 		
 		try {
+			Log.d("CACA put", toString(this.library));
 			editor.putString("books", toString(this.library));
 		} catch (IOException e) {
 			
@@ -163,37 +162,95 @@ public class SimpleBookManager implements BookManager {
 	
 	
 	//Serialization
-    private Object fromString( String s ) throws IOException, ClassNotFoundException {
-        byte [] data = s.getBytes();
-        StringBufferInputStream sbis = new StringBufferInputStream(s);
-        //ByteArrayInputStream bais = new ByteArrayInputStream(data);
-        ObjectInputStream ois = new ObjectInputStream(sbis);
-        Object o  = ois.readObject();
-        ois.close();
-
-        return o;
+    private Object fromString(String s) throws IOException, ClassNotFoundException {
+    	try { 
+            ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(s.getBytes())); 
+            Object object = in.readObject(); 
+            in.close(); 
+       
+            return object; 
+          } catch(ClassNotFoundException cnfe) { 
+            Log.e("deserializeObject", "class not found error", cnfe); 
+       
+            return null; 
+          } catch(IOException ioe) { 
+            Log.e("deserializeObject", "io error", ioe); 
+       
+            return null; 
+          } 
     }
     private String toString(Serializable o) throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(baos);
-        oos.writeObject(o);
-        oos.flush();
-        String s = baos.toString();
-        oos.close();
-        baos.close();
-        Log.d("CACA", s);
-
-        Object oo;
-        try {
-			oo = fromString(s);
-	        Log.d("CACA1", oo.toString());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-        
-
-        Log.d("CACA", "plp");
-        
-        return s;
+//    	ByteArrayOutputStream bos = new ByteArrayOutputStream(); 
+//        
+//        try { 
+//          ObjectOutput out = new ObjectOutputStream(bos); 
+//          out.writeObject(o); 
+//          out.close(); 
+//     
+//          // Get the bytes of the serialized object 
+//          byte[] buf = bos.toByteArray(); 
+//     
+//          return new String(buf); 
+//        } catch(IOException ioe) { 
+//          Log.e("serializeObject", "error", ioe); 
+//     
+//          return null; 
+//        }
+    	
+//    	Bla bla = new Bla(); 
+    	   
+    	  // assuming that both those serialize and deserialize methods are under the SerializerClass 
+    	  byte[] blaBytes = serializeObject(o); 
+    	  Log.d("CACA", new String(blaBytes));
+    	  
+    	  Serializable deserializedBla = (Serializable) deserializeObject(blaBytes); 
+    	  Log.d("CACA", deserializedBla.toString());
+    	  
+        return "";
     }
+    
+    //------------------------------------------------------------
+    public static byte[] serializeObject(Object o) { 
+        ByteArrayOutputStream bos = new ByteArrayOutputStream(); 
+     
+        try { 
+          ObjectOutput out = new ObjectOutputStream(bos); 
+          out.writeObject(o); 
+          out.close(); 
+     
+          // Get the bytes of the serialized object 
+          byte[] buf = bos.toByteArray(); 
+     
+          return buf; 
+        } catch(IOException ioe) { 
+          Log.e("serializeObject", "error", ioe); 
+     
+          return null; 
+        } 
+      } 
+    
+    public static Object deserializeObject(byte[] b) { 
+        try { 
+          ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(b)); 
+          Object object = in.readObject(); 
+          in.close(); 
+     
+          return object; 
+        } catch(ClassNotFoundException cnfe) { 
+          Log.e("deserializeObject", "class not found error", cnfe); 
+     
+          return null; 
+        } catch(IOException ioe) { 
+          Log.e("deserializeObject", "io error", ioe); 
+     
+          return null; 
+        } 
+      }
+    
+    
 }
+
+//class Bla implements Serializable { 
+//    public String blaDate; 
+//    public String blaText; 
+//  }
