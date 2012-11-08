@@ -1,6 +1,5 @@
 package edu.chalmers.phase1;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,8 +11,9 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
-
-
+/*
+ * Display details of a book
+ */
 public class DetailActivity extends SherlockActivity {
 
 	MenuItem modify;
@@ -24,9 +24,7 @@ public class DetailActivity extends SherlockActivity {
     	setTheme(R.style.Theme_Sherlock);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_detail);
-        
-		retreiveBookInfo();        
-        
+		retreiveBookInfo();           
     }
 
     public void retreiveBookInfo(){
@@ -65,7 +63,7 @@ public class DetailActivity extends SherlockActivity {
     	switch (item.getItemId()) {
 	        case R.id.modify:
 	        	myIntent = new Intent( this, BookEditActivity.class);
-	        	myIntent.putExtra("MODE", (int)1);
+	        	myIntent.putExtra("MODE", (int)1); // Mode 1: edit mode
 	        	myIntent.putExtra("BOOK_ID", (int)bookId);
 	        	startActivityForResult(myIntent, 0);
 	        return true;
@@ -86,7 +84,7 @@ public class DetailActivity extends SherlockActivity {
 		if(resultCode==Activity.RESULT_OK)
 		{
 			update();
-			Log.d("TAG","back to DetailActivity");
+			Log.d("DEBUG_TAG","Back to DetailActivity");
 		}
 	};
 	

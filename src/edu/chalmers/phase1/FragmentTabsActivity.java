@@ -18,30 +18,32 @@ import com.actionbarsherlock.view.MenuItem;
 //import com.actionbarsherlock.sample.demos.R;
 import com.actionbarsherlock.view.MenuInflater;
 
+/*
+ * Activity wich manage 2 tabs (fragments): collection and summary
+ */
 public class FragmentTabsActivity extends SherlockFragmentActivity {
     private SherlockFragment sumFragment= new SummaryFragment();
     private SherlockFragment collectionFragment= new CollectionFragment();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.Theme_Sherlock); //Used for theme switching in samples
+        setTheme(R.style.Theme_Sherlock);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_fragmenttabs);
         
-        //We take the support actionbar
+        //Create the 2 tabs
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        //mSelected = (TextView)findViewById(R.id.text);
          
         ActionBar.Tab sumTab = actionBar.newTab();
-        ActionBar.Tab testTab = actionBar.newTab();
-        testTab.setText("Collection");
+        ActionBar.Tab collectionTab = actionBar.newTab();
+        collectionTab.setText("Collection");
         sumTab.setText("Summary");
         sumTab.setTabListener(new MyTabListener(sumFragment));
-        testTab.setTabListener(new MyTabListener(collectionFragment));
+        collectionTab.setTabListener(new MyTabListener(collectionFragment));
         
-        actionBar.addTab(testTab);
+        actionBar.addTab(collectionTab);
         actionBar.addTab(sumTab);
         
         SimpleBookManager.getBookManager().loadBooks(getPreferences(0));
@@ -59,9 +61,10 @@ public class FragmentTabsActivity extends SherlockFragmentActivity {
         //respond to menu item selection
     	switch (item.getItemId()) {
         case R.id.add:
+        	// Open the activity bookEditActivity in order to create a new book
         	Intent myIntent = new Intent( this, BookEditActivity.class);
         	myIntent = new Intent( this, BookEditActivity.class);
-        	myIntent.putExtra("MODE", (int)0);
+        	myIntent.putExtra("MODE", (int)0);// Mode 0: Create mode
         	startActivityForResult(myIntent, 0);
         return true;
         default:
@@ -71,14 +74,15 @@ public class FragmentTabsActivity extends SherlockFragmentActivity {
  
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		Log.d("TAG","Result");
 		if(resultCode==Activity.RESULT_OK)
 		{
 			((CollectionFragment)collectionFragment).update();
-			Log.d("TAG","Notify");
 		}
 	}
     
+    /*
+     * Tabs' Listner
+     */
     public class MyTabListener implements TabListener {
 
 		public SherlockFragment fragment;
@@ -90,10 +94,8 @@ public class FragmentTabsActivity extends SherlockFragmentActivity {
 
         @Override
         public void onTabSelected(Tab tab, FragmentTransaction transaction) {
-        	Log.d("TAG", "" + fragment);
         	transaction.replace(R.id.tabContent, fragment);
-        	
-        	Log.d("TAG", "Terminate " + fragment);
+        	Log.d("DEBUG_TAG", "Switch Tab to " + fragment);
         }
 
         @Override
@@ -102,7 +104,6 @@ public class FragmentTabsActivity extends SherlockFragmentActivity {
 
 		@Override
 		public void onTabReselected(Tab tab, FragmentTransaction ft) {
-			// TODO Auto-generated method stub
 			
 		}
 

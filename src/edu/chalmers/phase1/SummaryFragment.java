@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
 
+/*
+ * Display globals stats.
+ */
 public class SummaryFragment extends SherlockFragment {
 	BookManager bm = SimpleBookManager.getBookManager();
 	

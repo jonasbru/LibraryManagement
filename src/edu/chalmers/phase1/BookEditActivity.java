@@ -12,6 +12,9 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import android.widget.EditText;
 
+/*
+ * Allow to create or modify book's informations
+ */
 public class BookEditActivity extends SherlockActivity {
 
 	private AlertDialog.Builder alt_bld;
@@ -19,13 +22,13 @@ public class BookEditActivity extends SherlockActivity {
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
-    	setTheme(R.style.Theme_Sherlock); //Used for theme switching in samples
+    	Log.d("DEBUG_TAG","NewEdit");
+    	setTheme(R.style.Theme_Sherlock);
         super.onCreate(savedInstanceState);
-        Log.d("TAG","NewEdit");
         setContentView(R.layout.activity_book_edit);
         alt_bld = new AlertDialog.Builder(this);
         alt_bld.setMessage(R.string.book_edit_popup).setCancelable(true);
-        mode = getIntent().getExtras().getInt("MODE");// 1 if we want to modify a book
+        mode = getIntent().getExtras().getInt("MODE");// 1 for modify a book, 2 for create a book
         
         switch (mode) {
 		case 0:// we want to create a book

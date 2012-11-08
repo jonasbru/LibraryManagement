@@ -14,7 +14,7 @@ import android.widget.ListView;
 import com.actionbarsherlock.app.SherlockFragment;
 
 /*
- * Display the list of all the titles and allows selection of one of these
+ * Display the list of all the titles and allows the selection of one of these
  */
 public class CollectionFragment extends SherlockFragment {
 
