@@ -78,7 +78,6 @@ public class FragmentTabsActivity extends SherlockFragmentActivity {
 		if(resultCode==Activity.RESULT_OK)
 		{
 			((CollectionFragment)collectionFragment).update();
-			//((SummaryFragment)sumFragment).updateSummary(sumFragment.getView());
 
 		}
 	}
@@ -98,16 +97,16 @@ public class FragmentTabsActivity extends SherlockFragmentActivity {
         @Override
         public void onTabSelected(Tab tab, FragmentTransaction transaction) {
         	transaction.replace(R.id.tabContent, fragment);
-        	Log.d("DEBUG_TAG", "Switch Tab to " + fragment);
         }
 
         @Override
         public void onTabUnselected(Tab tab, FragmentTransaction transaction) {
+        	Log.d("DEBUG_TAG", "onTabUnselected " + fragment);
         }
 
 		@Override
 		public void onTabReselected(Tab tab, FragmentTransaction ft) {
-			
+			Log.d("DEBUG_TAG", "onTabReselected " + fragment);
 		}
 
     }
