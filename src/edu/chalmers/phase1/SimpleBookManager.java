@@ -44,7 +44,7 @@ public class SimpleBookManager implements BookManager {
 			library.add(new Book("Richard Dawkins", "The Selfish Gene", 320,
 					"RDTSG", "Biology"));
 			library.add(new Book("Douglas R. Hofstadter",
-					"Gödel, Escher, Bach: An Eternal Golden Braid", 180,
+					"Gödel, Eternal Golden Braid", 180,
 					"RDTSG", "Maths"));
 		} else {
 			this.library = (ArrayList<Book>) deserializeObject(sp.getString(
