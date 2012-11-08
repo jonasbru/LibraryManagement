@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-   	<!-- 
-   	<ImageButton xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:id="@+id/ImageAddButton"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:src="@drawable/plus"
-	    android:contentDescription="@string/add_button">
-	    android:background="@drawable/round_button" 
-	 </ImageButton> -->
 	<item android:id="@+id/add"
 	android:icon="@drawable/plus" android:enabled="true" android:visible="true"/>
-   	<!-- <item android:id="@+id/addMenu" android:enabled="true" android:visible="true" android:title="plop" android:menuCategory="container"></item> 
--->
 </menu>

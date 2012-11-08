@@ -43,7 +43,7 @@ public class Collection extends SherlockFragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.activity_collection, container, false);
         collectionLayout = (ListView)(v.findViewById(R.id.collectionListView));
-        //collectionLayout.h
+
         collectionLayout.setOnItemClickListener(mMessageClickedHandler);
         listAdapter = new ArrayAdapter<String>(getActivity() , R.layout.simple_row, m.getAllBooksTitles());  
         collectionLayout.setAdapter(listAdapter);

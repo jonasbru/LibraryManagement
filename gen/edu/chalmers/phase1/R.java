@@ -918,10 +918,14 @@ containing a value of this type.
         public static final int abs__textfield_searchview_holo_light=0x7f02006c;
         public static final int abs__textfield_searchview_right_holo_dark=0x7f02006d;
         public static final int abs__textfield_searchview_right_holo_light=0x7f02006e;
-        public static final int ic_action_search=0x7f02006f;
-        public static final int ic_launcher=0x7f020070;
-        public static final int plus=0x7f020071;
-        public static final int validate=0x7f020072;
+        public static final int android_listview_icons=0x7f02006f;
+        public static final int delete=0x7f020070;
+        public static final int edit=0x7f020071;
+        public static final int ic_action_search=0x7f020072;
+        public static final int ic_compose=0x7f020073;
+        public static final int ic_launcher=0x7f020074;
+        public static final int plus=0x7f020075;
+        public static final int validate=0x7f020076;
     }
     public static final class id {
         public static final int AuthorText=0x7f040052;
@@ -975,7 +979,8 @@ containing a value of this type.
         public static final int abs__title=0x7f04001b;
         public static final int abs__titleDivider=0x7f04001c;
         public static final int abs__up=0x7f04000b;
-        public static final int add=0x7f04005a;
+        public static final int add=0x7f04005b;
+        public static final int book_detail=0x7f04005a;
         public static final int book_edit_author=0x7f040037;
         public static final int book_edit_author_label=0x7f040036;
         public static final int book_edit_course=0x7f040039;
@@ -1117,12 +1122,13 @@ containing a value of this type.
         public static final int add_button=0x7f090024;
         public static final int add_icon=0x7f090025;
         public static final int app_name=0x7f09000f;
-        public static final int book_edit_author=0x7f090029;
-        public static final int book_edit_course=0x7f09002a;
-        public static final int book_edit_isbn=0x7f09002b;
-        public static final int book_edit_popup=0x7f09002d;
-        public static final int book_edit_price=0x7f09002c;
-        public static final int book_edit_title=0x7f090028;
+        public static final int book_detail_title=0x7f090028;
+        public static final int book_edit_author=0x7f09002a;
+        public static final int book_edit_course=0x7f09002b;
+        public static final int book_edit_isbn=0x7f09002c;
+        public static final int book_edit_popup=0x7f09002e;
+        public static final int book_edit_price=0x7f09002d;
+        public static final int book_edit_title=0x7f090029;
         public static final int hello_world=0x7f090010;
         public static final int menu_settings=0x7f090011;
         public static final int title_activity_book_edit=0x7f090027;
