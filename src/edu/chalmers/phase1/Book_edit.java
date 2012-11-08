@@ -1,13 +1,10 @@
 package edu.chalmers.phase1;
 
 
-import android.os.Bundle;
-import android.provider.ContactsContract.CommonDataKinds.Event;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -84,6 +81,8 @@ public class Book_edit extends Activity {
 				default:
 					break;
 				}
+
+        		SimpleBookManager.getBookManager().saveChanges();
 
         		Intent intent = new Intent();
                 setResult(RESULT_OK, intent);

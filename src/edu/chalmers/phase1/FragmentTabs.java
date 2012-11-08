@@ -43,6 +43,8 @@ public class FragmentTabs extends SherlockFragmentActivity {
         
         actionBar.addTab(testTab);
         actionBar.addTab(sumTab);
+        
+        SimpleBookManager.getBookManager().loadBooks(getPreferences(0));
     }
     
     
@@ -58,6 +60,8 @@ public class FragmentTabs extends SherlockFragmentActivity {
     	switch (item.getItemId()) {
         case R.id.add:
         	Intent myIntent = new Intent( this, Book_edit.class);
+        	myIntent = new Intent( this, Book_edit.class);
+        	myIntent.putExtra("MODE", (int)0);
         	startActivityForResult(myIntent, 0);
         return true;
         default:
