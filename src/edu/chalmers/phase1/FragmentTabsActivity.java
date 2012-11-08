@@ -1,6 +1,7 @@
 package edu.chalmers.phase1;
 
 
+import android.R.id;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -77,6 +78,8 @@ public class FragmentTabsActivity extends SherlockFragmentActivity {
 		if(resultCode==Activity.RESULT_OK)
 		{
 			((CollectionFragment)collectionFragment).update();
+			((SummaryFragment)sumFragment).updateSummary(sumFragment.getView());
+
 		}
 	}
     
