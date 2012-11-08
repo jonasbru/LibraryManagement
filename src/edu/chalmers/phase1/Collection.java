@@ -43,7 +43,6 @@ public class Collection extends SherlockFragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.activity_collection, container, false);
         collectionLayout = (ListView)(v.findViewById(R.id.collectionListView));
-
         collectionLayout.setOnItemClickListener(mMessageClickedHandler);
         listAdapter = new ArrayAdapter<String>(getActivity() , R.layout.simple_row, m.getAllBooksTitles());  
         collectionLayout.setAdapter(listAdapter);
@@ -59,9 +58,20 @@ public class Collection extends SherlockFragment {
             
         	Intent myIntent = new Intent(getView().getContext(), DetailActivity.class);
         	myIntent.putExtra("BOOK_ID", (int)position);
-            startActivity(myIntent);
+        	myIntent.putExtra("MODE", (int)0);
+            startActivityForResult(myIntent, 0);
         }
     };
+    
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		if(resultCode==Activity.RESULT_OK)
+		{
+			update();
+			Log.d("TAG","back to collection");
+		}
+	}
     
     public void update(){
     	getListAdapter().clear();

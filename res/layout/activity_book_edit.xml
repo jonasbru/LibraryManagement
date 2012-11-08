@@ -11,7 +11,7 @@
         android:layout_marginRight="32dp"
         android:layout_marginTop="0dp">
         
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:stretchColumns="1">
@@ -86,12 +86,15 @@
 		    android:layout_height="wrap_content"
 		    android:text="@string/book_edit_price"
 		    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
 		
 		<EditText
 		    android:id="@+id/book_edit_price"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:hint="Price"
+		    android:hint="0"
+		    android:inputType="number"
 		    android:ems="10" >
 		
 

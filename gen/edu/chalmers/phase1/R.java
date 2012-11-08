@@ -979,8 +979,7 @@ containing a value of this type.
         public static final int abs__title=0x7f04001b;
         public static final int abs__titleDivider=0x7f04001c;
         public static final int abs__up=0x7f04000b;
-        public static final int add=0x7f04005b;
-        public static final int book_detail=0x7f04005a;
+        public static final int add=0x7f04005c;
         public static final int book_edit_author=0x7f040037;
         public static final int book_edit_author_label=0x7f040036;
         public static final int book_edit_course=0x7f040039;
@@ -992,12 +991,14 @@ containing a value of this type.
         public static final int book_edit_title=0x7f040035;
         public static final int book_edit_title_label=0x7f040034;
         public static final int collectionListView=0x7f04003e;
+        public static final int delete=0x7f04005b;
         public static final int disableHome=0x7f040009;
         public static final int edit_query=0x7f040027;
         public static final int homeAsUp=0x7f040006;
         public static final int linearLayout1=0x7f040040;
         public static final int listMode=0x7f040002;
         public static final int menu_settings=0x7f040059;
+        public static final int modify=0x7f04005a;
         public static final int normal=0x7f040001;
         public static final int numberBooksText=0x7f040041;
         public static final int rowTextView=0x7f040057;

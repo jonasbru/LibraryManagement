@@ -83,7 +83,10 @@ public class SimpleBookManager implements BookManager {
 
 	@Override
 	public float getMeanPrice() {
-		return getTotalCost()/library.size();
+		if(library.size() != 0)
+			return getTotalCost()/library.size();
+		else
+			return 0;
 	}
 
 	@Override

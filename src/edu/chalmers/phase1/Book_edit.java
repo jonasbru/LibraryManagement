@@ -16,13 +16,28 @@ import android.widget.EditText;
 public class Book_edit extends Activity {
 
 	private AlertDialog.Builder alt_bld;
+	private int mode = 0;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("TAG","NewEdit");
         setContentView(R.layout.activity_book_edit);
         alt_bld = new AlertDialog.Builder(this);
         alt_bld.setMessage(R.string.book_edit_popup).setCancelable(true);
+        mode = getIntent().getExtras().getInt("MODE");// 1 if we want to modify a book
+        
+        switch (mode) {
+		case 0:// we want to create a book
+			
+			break;
+		case 1: // we want to modify an existing book
+			int bookId = getIntent().getExtras().getInt("BOOK_ID");
+			fillField(SimpleBookManager.getBookManager().getBook(bookId));
+			break;
+		default:
+			break;
+		}
     }
 
     @Override
@@ -49,10 +64,27 @@ public class Book_edit extends Activity {
         		}else{
         			price = Integer.parseInt(((EditText)findViewById(R.id.book_edit_price)).getText().toString());
         		}
-        				
-        		//Save the book
-        		Book newBook = new Book(author,title,price, isbn, course);
-        		SimpleBookManager.getBookManager().addBook(newBook);
+        		
+        		switch (mode) {
+				case 0: // new book
+					//Save the book
+	        		Book newBook = new Book(author,title,price, isbn, course);
+	        		SimpleBookManager.getBookManager().addBook(newBook);
+					break;
+				case 1: //modify existing book
+					int bookId = getIntent().getExtras().getInt("BOOK_ID");
+					Book b = SimpleBookManager.getBookManager().getBook(bookId);
+					b.setAuthor(author);
+					b.setCourse(course);
+					b.setIsbn(isbn);
+					b.setPrice(price);
+					b.setTitle(title);
+					break;
+
+				default:
+					break;
+				}
+
         		Intent intent = new Intent();
                 setResult(RESULT_OK, intent);
                 finish();
@@ -78,6 +110,14 @@ public class Book_edit extends Activity {
         super.onBackPressed();
     }
     
+    public void fillField(Book book){
+    	((EditText)findViewById(R.id.book_edit_author)).setText(book.getAuthor());
+    	((EditText)findViewById(R.id.book_edit_course)).setText(book.getCourse());
+    	((EditText)findViewById(R.id.book_edit_isbn)).setText(book.getIsbn());
+    	((EditText)findViewById(R.id.book_edit_title)).setText(book.getTitle());
+    	((EditText)findViewById(R.id.book_edit_price)).setText(String.valueOf(book.getPrice()));
+
+    }
     /*
      * Popup
      * 
