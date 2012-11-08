@@ -60,12 +60,15 @@ public class SimpleBookManager implements BookManager {
 
 		String s = serializeObject(this.library);
 
+		//Don't know if necessary, but dealed sometimes with books x2
+		//So, we never know..
+		if(this.sp.contains("books")) {
+			editor.remove("books"); 
+		}
+		
 		editor.putString("books", s);
 
 		editor.commit();
-
-		// toString(this.library);
-
 	}
 
 	@Override
@@ -96,6 +99,7 @@ public class SimpleBookManager implements BookManager {
 	@Override
 	public void removeBook(Book book) {
 		library.remove(book);
+		this.saveChanges();
 	}
 
 	@Override
@@ -103,6 +107,7 @@ public class SimpleBookManager implements BookManager {
 		Book book1 = library.remove(from);
 		library.add(library.remove(to));
 		library.add(book1);
+		this.saveChanges();
 	}
 
 	@Override
@@ -154,6 +159,7 @@ public class SimpleBookManager implements BookManager {
 	@Override
 	public void addBook(Book b) {
 		library.add(b);
+		this.saveChanges();
 	}
 
 	public static String serializeObject(Object o) {
