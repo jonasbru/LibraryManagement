@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
 
-public class SummaryActivity extends SherlockFragment {
+public class SummaryFragment extends SherlockFragment {
 	BookManager bm = SimpleBookManager.getBookManager();
 	
     @Override
@@ -37,7 +37,7 @@ public class SummaryActivity extends SherlockFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-    	View v = inflater.inflate(R.layout.activity_summary, container, false);
+    	View v = inflater.inflate(R.layout.fragment_summary, container, false);
     	updateSummary(v);
         return v;
     }

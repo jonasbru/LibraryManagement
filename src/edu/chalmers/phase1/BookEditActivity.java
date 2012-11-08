@@ -12,7 +12,7 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import android.widget.EditText;
 
-public class Book_edit extends SherlockActivity {
+public class BookEditActivity extends SherlockActivity {
 
 	private AlertDialog.Builder alt_bld;
 	private int mode = 0;

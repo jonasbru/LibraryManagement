@@ -23,7 +23,7 @@ public class DetailActivity extends SherlockActivity {
     public void onCreate(Bundle savedInstanceState) {
     	setTheme(R.style.Theme_Sherlock);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.book_detail);
+        setContentView(R.layout.activity_book_detail);
         
 		retreiveBookInfo();        
         
@@ -53,16 +53,7 @@ public class DetailActivity extends SherlockActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
     	MenuInflater inflater = getSupportMenuInflater();
-        inflater.inflate(R.menu.book_detail, menu);
-/*
-    	menu.add("Modify")
-            .setIcon(R.drawable.edit)
-            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-
-        menu.add("Delete")
-            .setIcon(R.drawable.delete)
-            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-*/    	 
+        inflater.inflate(R.menu.activity_book_detail, menu); 	 
         return true;
     }
     
@@ -73,7 +64,7 @@ public class DetailActivity extends SherlockActivity {
         //respond to menu item selection
     	switch (item.getItemId()) {
 	        case R.id.modify:
-	        	myIntent = new Intent( this, Book_edit.class);
+	        	myIntent = new Intent( this, BookEditActivity.class);
 	        	myIntent.putExtra("MODE", (int)1);
 	        	myIntent.putExtra("BOOK_ID", (int)bookId);
 	        	startActivityForResult(myIntent, 0);
@@ -102,24 +93,4 @@ public class DetailActivity extends SherlockActivity {
 	public void update(){
 		retreiveBookInfo();
 	}
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //getMenuInflater().inflate(R.menu.book_detail, menu);
-            android.view.MenuInflater inflater =getMenuInflater();
-            inflater.inflate(R.menu.simple_addbutton, menu);
-        return true;
-    }
-    */
-    
-    /* A metttre dans le handler pour retourner a l'activite precedente (collection)
-     * Button next = (Button) findViewById(R.id.Button02);
-        next.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                setResult(RESULT_OK, intent);
-                finish();
-            }
-
-        });
-     */
 }

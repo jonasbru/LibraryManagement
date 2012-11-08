@@ -18,16 +18,16 @@ import com.actionbarsherlock.view.MenuItem;
 //import com.actionbarsherlock.sample.demos.R;
 import com.actionbarsherlock.view.MenuInflater;
 
-public class FragmentTabs extends SherlockFragmentActivity {
-    private SherlockFragment sumFragment= new SummaryActivity();
-    private SherlockFragment collectionFragment= new Collection();
+public class FragmentTabsActivity extends SherlockFragmentActivity {
+    private SherlockFragment sumFragment= new SummaryFragment();
+    private SherlockFragment collectionFragment= new CollectionFragment();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_Sherlock); //Used for theme switching in samples
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_fragmenttab);
+        setContentView(R.layout.activity_fragmenttabs);
         
         //We take the support actionbar
         ActionBar actionBar = getSupportActionBar();
@@ -59,8 +59,8 @@ public class FragmentTabs extends SherlockFragmentActivity {
         //respond to menu item selection
     	switch (item.getItemId()) {
         case R.id.add:
-        	Intent myIntent = new Intent( this, Book_edit.class);
-        	myIntent = new Intent( this, Book_edit.class);
+        	Intent myIntent = new Intent( this, BookEditActivity.class);
+        	myIntent = new Intent( this, BookEditActivity.class);
         	myIntent.putExtra("MODE", (int)0);
         	startActivityForResult(myIntent, 0);
         return true;
@@ -74,7 +74,7 @@ public class FragmentTabs extends SherlockFragmentActivity {
 		Log.d("TAG","Result");
 		if(resultCode==Activity.RESULT_OK)
 		{
-			((Collection)collectionFragment).update();
+			((CollectionFragment)collectionFragment).update();
 			Log.d("TAG","Notify");
 		}
 	}

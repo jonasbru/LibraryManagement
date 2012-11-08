@@ -1,11 +1,10 @@
 <resources>
 
-    <string name="app_name">LibraryManagement</string>
+    <string name="app_name">Library Management</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_summary">SummaryActivity</string>
-    <string name="title_activity_fragmentTabs">Tabs</string>
+<!--     <string name="title_activity_fragmentTabs">Tabs</string> -->
     <string name="TitleLabel">Title : </string>
     <string name="AuthorLabel">Author : </string>
     <string name="CourseLabel">Course : </string>
@@ -19,18 +18,19 @@
     <string name="title_section2">Section 2</string>
     <string name="title_section1">Section 1</string>
     <string name="title_activity_library_management">LibraryManagement</string>
-    <string name="title_activity_fragmentTab">Tab</string>
-    <string name="title_activity_test">Test</string>
-    <string name="add_button">Add</string>
+     <string name="add_button">Add</string>
     <string name="add_icon">plus.png</string>
     <string name="validate_icon">validate.jpg</string>
-    <string name="title_activity_book_edit">Book_edit</string>
     <string name="book_detail_title">Detail</string>
     <string name="book_edit_title">Title</string>
     <string name="book_edit_author">Author</string>
     <string name="book_edit_course">Course</string>
     <string name="book_edit_isbn">ISBN</string>
     <string name="book_edit_price">Price</string>
+    
+    <string name="title_activity_book_edit">Book editing</string>
+    <string name="title_activity_fragmentTabs">Library Management</string>
     <string name="book_edit_popup">You have to enter a title</string>
+    <string name="title_activity_detail">Details</string>
 
 </resources>
