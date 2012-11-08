@@ -1,22 +1,24 @@
 package edu.chalmers.phase1;
 
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import android.widget.EditText;
 
-public class Book_edit extends Activity {
+public class Book_edit extends SherlockActivity {
 
 	private AlertDialog.Builder alt_bld;
 	private int mode = 0;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	setTheme(R.style.Theme_Sherlock); //Used for theme switching in samples
         super.onCreate(savedInstanceState);
         Log.d("TAG","NewEdit");
         setContentView(R.layout.activity_book_edit);
@@ -39,7 +41,7 @@ public class Book_edit extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_book_edit,menu);// activity_book_edit, menu);
+        getSupportMenuInflater().inflate(R.menu.activity_book_edit,menu);// activity_book_edit, menu);
         return true;
 
     }
