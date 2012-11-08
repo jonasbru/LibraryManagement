@@ -43,7 +43,8 @@ public class CollectionFragment extends SherlockFragment {
     
     // Create a message handling witch manage the selection of a book.
     private OnItemClickListener mMessageClickedHandler = new OnItemClickListener() {
-        public void onItemClick(AdapterView parent, View v, int position, long id) {
+		@SuppressWarnings("rawtypes")
+		public void onItemClick(AdapterView parent, View v, int position, long id) {
         	Log.d("DEBUG_TAG", "Book "+ position + " selected");
             
         	// Launch the activity of details of the book
