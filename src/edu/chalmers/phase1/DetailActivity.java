@@ -1,6 +1,8 @@
 package edu.chalmers.phase1;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,7 +60,7 @@ public class DetailActivity extends SherlockActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
     	Intent myIntent;
     	int bookId = getIntent().getExtras().getInt("BOOK_ID");
-    	BookManager bm = SimpleBookManager.getBookManager();
+    	
         //respond to menu item selection
     	switch (item.getItemId()) {
 	        case R.id.modify:
@@ -68,10 +70,9 @@ public class DetailActivity extends SherlockActivity {
 	        	startActivityForResult(myIntent, 0);
 	        return true;
 	        case R.id.delete:
-	        	Intent intent = new Intent();
-	        	bm.removeBook(bm.getBook(bookId));
-                setResult(RESULT_OK, intent);
-	        	finish();
+	        	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	        	builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener)
+	        	    .setNegativeButton("No", dialogClickListener).show();
 	        return true;
 	        default:
 	        	return super.onOptionsItemSelected(item);
@@ -86,6 +87,26 @@ public class DetailActivity extends SherlockActivity {
 			update();
 			Log.d("DEBUG_TAG","Back to DetailActivity");
 		}
+	};
+	
+	DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+	    @Override
+	    public void onClick(DialogInterface dialog, int which) {
+	        switch (which){
+	        case DialogInterface.BUTTON_POSITIVE:
+	        	BookManager bm = SimpleBookManager.getBookManager();
+	        	int bookId = getIntent().getExtras().getInt("BOOK_ID");
+	        	Intent intent = new Intent();
+	        	bm.removeBook(bm.getBook(bookId));
+                setResult(RESULT_OK, intent);
+	        	finish();
+	            break;
+
+	        case DialogInterface.BUTTON_NEGATIVE:
+	            //No button clicked
+	            break;
+	        }
+	    }
 	};
 	
 	public void update(){

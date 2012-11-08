@@ -78,7 +78,7 @@ public class FragmentTabsActivity extends SherlockFragmentActivity {
 		if(resultCode==Activity.RESULT_OK)
 		{
 			((CollectionFragment)collectionFragment).update();
-			((SummaryFragment)sumFragment).updateSummary(sumFragment.getView());
+			//((SummaryFragment)sumFragment).updateSummary(sumFragment.getView());
 
 		}
 	}
