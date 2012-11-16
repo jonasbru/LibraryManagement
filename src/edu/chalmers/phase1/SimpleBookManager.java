@@ -34,7 +34,8 @@ public class SimpleBookManager implements BookManager {
 	}
 
 	/**
-	 * 
+	 * If it's the first time the application is started, 5 example books are loaded.
+	 * If it's not, loads the books from the SharedPreferences.
 	 * @param sp
 	 * @return
 	 */
@@ -175,11 +176,11 @@ public class SimpleBookManager implements BookManager {
 	}
 
 	/**
-	 * 
+	 * Help function to serialize an object into a string
 	 * @param o
 	 * @return
 	 */
-	public static String serializeObject(Object o) {
+	private static String serializeObject(Object o) {
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 
 		try {
@@ -199,11 +200,11 @@ public class SimpleBookManager implements BookManager {
 	}
 
 	/**
-	 * 
+	 * Help function to deserialize an object from a string
 	 * @param b
 	 * @return
 	 */
-	public static Object deserializeObject(String b) {
+	private static Object deserializeObject(String b) {
 		try {
 			ObjectInputStream in = new ObjectInputStream(
 					new ByteArrayInputStream(Base64.decode(b, Base64.DEFAULT)));
