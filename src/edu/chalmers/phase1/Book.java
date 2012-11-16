@@ -11,6 +11,14 @@ public class Book implements Serializable {
 	private String isbn;
 	private String course;
 	
+	/**
+	 * 
+	 * @param author name of the author of the book
+	 * @param title title of the book
+	 * @param price price of the book
+	 * @param isbn Code of the book
+	 * @param course course code of the book
+	 */
 	public Book(String author, String title, int price, String isbn,
 			String course) {
 		super();
@@ -20,7 +28,6 @@ public class Book implements Serializable {
 		this.isbn = isbn;
 		this.course = course;
 	}
-	
 	public String getAuthor() {
 		return author;
 	}

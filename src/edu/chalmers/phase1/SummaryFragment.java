@@ -19,6 +19,10 @@ public class SummaryFragment extends SherlockFragment {
         super.onCreate(savedInstanceState);
     }
     
+    /**
+     * Update the content of a view of the summary
+     * @param v view to update
+     */
     public void updateSummary(View v){
     	TextView numberBooks = (TextView) v.findViewById(R.id.numberBooksText);
         int nbBooks = bm.count();

@@ -16,7 +16,13 @@ public class SimpleBookManager implements BookManager {
 
 	// Singleton
 	private static SimpleBookManager simpleBookManager = null;
+	private ArrayList<Book> library = new ArrayList<Book>();
+	private SharedPreferences sp;
 
+	/**
+	 * 
+	 * @return the instance of simpleBookManager
+	 */
 	static public SimpleBookManager getBookManager() {
 		if (simpleBookManager == null) {
 			simpleBookManager = new SimpleBookManager();
@@ -24,12 +30,14 @@ public class SimpleBookManager implements BookManager {
 		return simpleBookManager;
 	}
 
-	private ArrayList<Book> library = new ArrayList<Book>();
-	private SharedPreferences sp;
-
 	private SimpleBookManager() {
 	}
 
+	/**
+	 * 
+	 * @param sp
+	 * @return
+	 */
 	@SuppressWarnings("unchecked")
 	public boolean loadBooks(SharedPreferences sp) {
 		this.sp = sp;
@@ -104,10 +112,14 @@ public class SimpleBookManager implements BookManager {
 
 	@Override
 	public void moveBook(int from, int to) {
-		Book book1 = library.remove(from);
-		library.add(library.remove(to));
-		library.add(book1);
-		this.saveChanges();
+		try {
+			Book book1 = library.remove(from);
+			library.add(library.remove(to));
+			library.add(book1);
+			this.saveChanges();
+		} catch (IndexOutOfBoundsException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -162,6 +174,11 @@ public class SimpleBookManager implements BookManager {
 		this.saveChanges();
 	}
 
+	/**
+	 * 
+	 * @param o
+	 * @return
+	 */
 	public static String serializeObject(Object o) {
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 
@@ -181,6 +198,11 @@ public class SimpleBookManager implements BookManager {
 		}
 	}
 
+	/**
+	 * 
+	 * @param b
+	 * @return
+	 */
 	public static Object deserializeObject(String b) {
 		try {
 			ObjectInputStream in = new ObjectInputStream(

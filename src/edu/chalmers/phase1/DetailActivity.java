@@ -29,6 +29,9 @@ public class DetailActivity extends SherlockActivity {
 		retreiveBookInfo();           
     }
 
+    /**
+     * Fill all the field according to the book selected
+     */
     public void retreiveBookInfo(){
     	int bookId = getIntent().getExtras().getInt("BOOK_ID");
         BookManager bm = SimpleBookManager.getBookManager();

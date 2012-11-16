@@ -115,6 +115,10 @@ public class BookEditActivity extends SherlockActivity {
         super.onBackPressed();
     }
     
+    /**
+     * 
+     * @param book fill all the edit text according to the book information
+     */
     public void fillField(Book book){
     	((EditText)findViewById(R.id.book_edit_author)).setText(book.getAuthor());
     	((EditText)findViewById(R.id.book_edit_course)).setText(book.getCourse());
@@ -123,28 +127,4 @@ public class BookEditActivity extends SherlockActivity {
     	((EditText)findViewById(R.id.book_edit_price)).setText(String.valueOf(book.getPrice()));
 
     }
-    /*
-     * Popup
-     * 
-     */
-    /*public class dialogFragment {
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            // Use the Builder class for convenient dialog construction
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage(R.string.book_edit_popup);
-                   /*.setPositiveButton(R.string.fire, new DialogInterface.OnClickListener() {
-                       public void onClick(DialogInterface dialog, int id) {
-                           // FIRE ZE MISSILES!
-                       }
-                   })
-                   .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                       public void onClick(DialogInterface dialog, int id) {
-                           // User cancelled the dialog
-                       }
-                   });
-            // Create the AlertDialog object and return it
-            return builder.create();
-        }
-    }*/
 }
