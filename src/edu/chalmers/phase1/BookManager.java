@@ -30,7 +30,7 @@ public interface BookManager {
 	 */
 	public void removeBook(Book book);
 	/**
-	 * 
+	 * Change the index of a book
 	 * @param from index of the book to move
 	 * @param to index where the book have to be moved
 	 */
